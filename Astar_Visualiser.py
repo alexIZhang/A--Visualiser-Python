@@ -67,7 +67,7 @@ def start_end_init():
     endX = int(endXBox.get())
     endY = int(endYBox.get())  
     if startX < 0 or startX > rows-1 or startY < 0 or startY > columns-1 or endX < 0 or endX > rows-1 or endY < 0 or endY > columns-1:
-        m_box.showwarning('Error', 'Values must between 0 and 39 inclusive')
+        m_box.showwarning('Error', 'Values must between 0 and 39 inclusive') 
     startNode = grid[startX][startY]
     endNode = grid[endX][endY]
     window.quit()
@@ -159,6 +159,7 @@ def main():
             while currNode != startNode:
                 currNode.drawCell(red, 0)
                 currNode = currNode.parent
+            Tk().wm_withdraw()
             m_box.showinfo('Done!', ('The end node was ' + str(total_distance) + ' cells from the start'))
             pygame.quit()
             
