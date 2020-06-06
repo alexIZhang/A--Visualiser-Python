@@ -62,10 +62,12 @@ def start_end_init():
     global endNode    
     if startXBox.get() == '' or startYBox.get() == '' or endXBox.get() == '' or endYBox.get() == '':
         m_box.showwarning('Error','Fill the missing fields')
+    if startXBox.get().isdigit() == False or startYBox.get().isdigit() == False or endXBox.get().isdigit() == False or endYBox.get().isdigit() == False:
+        m_box.showwarning('Error', 'Values must be integers') 
     startX = int(startXBox.get())
     startY = int(startYBox.get())
     endX = int(endXBox.get())
-    endY = int(endYBox.get())  
+    endY = int(endYBox.get())
     if startX < 0 or startX > rows-1 or startY < 0 or startY > columns-1 or endX < 0 or endX > rows-1 or endY < 0 or endY > columns-1:
         m_box.showwarning('Error', 'Values must between 0 and 39 inclusive') 
     startNode = grid[startX][startY]
