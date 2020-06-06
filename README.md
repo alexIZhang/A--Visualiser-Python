@@ -15,4 +15,5 @@ red cells represent the shortest path
 ## Dependencies
 
 Python 3 (Tkinter included with the standard installations of Python)
+
 Pygame 1.9.6
