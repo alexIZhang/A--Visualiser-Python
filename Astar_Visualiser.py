@@ -108,10 +108,10 @@ def setObstacle(position):
         if cursorPos.obstacle == False:
             cursorPos.obstacle = True
             cursorPos.drawCell(black, 0)
-        else:
-            cursorPos.obstacle = False
-            cursorPos.drawCell(white, 0)
-            cursorPos.drawCell(black, 1)
+        #else:
+            #cursorPos.obstacle = False
+            #cursorPos.drawCell(white, 0)
+            #cursorPos.drawCell(black, 1)
 
 # Initialize both open and closed list
 # Add the start node
@@ -122,6 +122,9 @@ startNode.drawCell(red, 0)
 endNode.drawCell(red, 0)
 openList.append(startNode)
 
+#collidepoint() --> x, y
+#if the mouse position is in a rectangle, and its not a start or end node ANd its not the previous node
+    #change the colour and set a new previous node
 pregame = True
 while pregame:
     for event in pygame.event.get():
@@ -161,6 +164,7 @@ def main():
             while currNode != startNode:
                 currNode.drawCell(red, 0)
                 currNode = currNode.parent
+                pygame.time.delay(10)
             Tk().wm_withdraw()
             m_box.showinfo('Done!', ('The end node was ' + str(total_distance) + ' cells from the start'))
             pygame.quit()
@@ -211,7 +215,3 @@ while True:
     main()
     pygame.time.delay(10)
     pygame.display.update()
-
-        
-
-
